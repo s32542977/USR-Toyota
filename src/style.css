@@ -1,0 +1,286 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft JhengHei;
+}
+
+html,
+body
+{
+    overflow: hidden;
+    height :100%;
+    width :100vh;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    overflow: hidden;
+}
+
+/*mobile*/
+@media (max-width: 480px) {
+
+    .content{
+        max-width:100%;
+        max-height:30%;
+    }
+
+    .mobile{
+        display: box;
+        height: 20%;
+        background-color: aqua;
+    }
+
+}
+
+/*PC*/
+@media (min-width: 481px) {
+    .move {
+        left:0;
+        transition:all 1s;
+    }
+
+    .content{
+        height: 100%;
+        width: 20%;
+        top:0px;
+
+        left:-100%;
+        transition:all 1s;
+        font-size: 0.8em;
+    }
+
+    .mobile{
+        display: none;
+    }
+}
+
+
+
+/*判斷方向*/
+@media (orientation: landscape) {
+    .orientation{
+        display: none;
+}
+}
+
+@media (orientation: portrait) {
+    .orientation{
+        width:100%;
+        height:100%;
+        background-color: #80dd74;
+        position: fixed;
+        z-index: 70;
+    }
+
+    .orientation > img{
+        position: relative;
+        top:70%;
+        right:-50%;
+        max-width: 350px;
+        z-index: 71;
+    }
+
+    .orientation > h4{
+        font-size: 4em;
+        color: #0aa363;
+        position: relative;
+        top:40%;
+        left:30%    ;
+    }
+
+    .webgl,.location{
+        display: none;
+        height:600px;
+    }
+
+}
+
+.loading-bar
+{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transform-origin:left;
+}
+
+.loading-bar.ended
+{
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+    transition: transform 1.5s ease-in-out;
+}
+
+.point
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.point .name
+{
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 20px;
+    background: #ffffff77;
+    border: 1px solid #ffffff77;
+    color: #000000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.point .text
+{
+    position: absolute;
+    top: 30px;
+    left: -120px;
+    width: 200px;
+    padding: 20px;
+    background: #ffffff77;
+    border: 1px solid #ffffff77;
+    color: #000000;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.point:hover .text
+{
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.nav-bar{
+    position: absolute;
+    background-color: #3a59e4;
+    width: 100%;
+    height: 60px;
+}
+
+h1,h2{
+    color:#0aa363;
+}
+
+
+
+.content{
+    position: fixed;
+    height:1600px;
+    background-color: #ffffff77;
+    padding: 40px;
+    overflow: scroll;
+}
+
+.content>p{
+    padding:20px 0px;
+}
+
+.move {
+    left:0;
+    transition:all 1s;
+  }
+
+.btn-more{
+    position: relative;
+    left:0px;
+    padding:10px 20px;
+    border-radius:10px;
+    color:#ffffff;
+    background-color:#0aa363;
+    border-style:none;
+    cursor: pointer;
+}
+
+
+.img-l{
+    width: 100%;
+    height: 200px;
+    background-color: #5d5d5d;
+    padding-bottom: 40px;
+}
+
+.location-0
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+}
+
+.content-detail{
+    position: absolute;
+    top:15%;
+    bottom: 100px;;
+    right:5%;
+    width: 50%;
+    height: 60%;
+    background: #ffffff;
+    padding: 5%;
+    border-radius:10px;
+    border-style:10px solid #ffffff77;
+    font-size: 1em;
+    overflow-y:scroll;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+
+
+.img-box{
+    display:flex;
+    flex-direction:row;
+    position: relative;
+    top:50px;
+    justify-content:space-around;
+}
+
+
+
+.hhhh{
+    margin:10px;
+    width: 200px;
+   
+}
+
+.content-detail>p{
+    position: relative;
+    margin-top:30px;
+}
+
+.detailDisplay{
+    opacity: 1;
+    transition: opacity 0.3s;
+    pointer-events: auto;
+}
+
+/*圖片*/
+.contentImg{
+    max-width: 100%;
+    padding:20px auto;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.cimg{
+    max-width: 100%;
+    padding:20px auto;
+}
+
+.item{
+    max-width: 400px;
+    margin: auto;
+}
